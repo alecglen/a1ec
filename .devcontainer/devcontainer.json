@@ -1,0 +1,20 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/typescript-node
+{
+  "name": "Node.js & TypeScript",
+  "image": "mcr.microsoft.com/devcontainers/typescript-node:18-bullseye",
+  "features": {
+    "ghcr.io/NicoVIII/devcontainer-features/pnpm:1": {}
+  },
+  "forwardPorts": [3000],
+"postCreateCommand": "pnpm install",
+"customizations": {
+	"vscode": {
+		"extensions": [
+			"astro-build.astro-vscode",
+			"dbaeumer.vscode-eslint",
+			"esbenp.prettier-vscode"
+		]
+	}
+}
+}
