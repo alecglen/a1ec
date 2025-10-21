@@ -6,15 +6,15 @@
   "features": {
     "ghcr.io/NicoVIII/devcontainer-features/pnpm:1": {}
   },
-  "forwardPorts": [3000],
-"postCreateCommand": "npm install",
-"customizations": {
-	"vscode": {
-		"extensions": [
-			"astro-build.astro-vscode",
-			"dbaeumer.vscode-eslint",
-			"esbenp.prettier-vscode"
-		]
+  "forwardPorts": [4321],
+  "postCreateCommand": "npm install",
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"astro-build.astro-vscode",
+				"dbaeumer.vscode-eslint",
+				"esbenp.prettier-vscode"
+			]
+		}
 	}
-}
 }
