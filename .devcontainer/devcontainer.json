@@ -2,12 +2,12 @@
 // README at: https://github.com/devcontainers/templates/tree/main/src/typescript-node
 {
   "name": "Node.js & TypeScript",
-  "image": "mcr.microsoft.com/devcontainers/typescript-node:18-bullseye",
+  "image": "mcr.microsoft.com/devcontainers/typescript-node:22-bookworm",
   "features": {
     "ghcr.io/NicoVIII/devcontainer-features/pnpm:1": {}
   },
   "forwardPorts": [3000],
-"postCreateCommand": "pnpm install",
+"postCreateCommand": "npm install",
 "customizations": {
 	"vscode": {
 		"extensions": [
