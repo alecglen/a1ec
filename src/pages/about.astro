@@ -1,23 +1,63 @@
 ---
+const pageTitle = "About Me";
 
+const my = {
+  firstName: "Alec",
+  country: "the US",
+  occupation: "Software Engineer",
+  hobbies: ["football", "card games", "reading"],
+};
+
+const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "Writing Docs"];
+
+const happy = true;
+const finished = false;
+const goal = 2;
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<a href="/">Home</a>
-		<a href="/about">About</a>
-		<a href="/blog">Blog</a>
-		<h1>About Me</h1>
-		<h2>... and my new Astro site!</h2>
-		<p>I am working through Astro's introductory tutorial. This is the second page on my website, and it's the first one I built myself!</p>
-		<p>This site will update as I complete more of the tutorial, so keep checking back and see how my journey is going!</p>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{pageTitle}</title>
+  </head>
+  <body>
+    <a href="/">Home</a>
+    <a href="/about">About</a>
+    <a href="/blog">Blog</a>
+    <h1>{pageTitle}</h1>
+    <h2>... and my new Astro site!</h2>
+    <p>
+      I am working through Astro's introductory tutorial. This is the second
+      page on my website, and it's the first one I built myself!
+    </p>
+    <p>
+      This site will update as I complete more of the tutorial, so keep checking
+      back and see how my journey is going!
+    </p>
 
-	</body>
+    <p>Here are a few facts about me:</p>
+    <ul>
+      <li>My name is {my.firstName}.</li>
+      <li>I live in {my.country} and work as a {my.occupation}.</li>
+      {
+        my.hobbies.length >= 2 && (
+          <li>
+            Two of my hobbies are: {my.hobbies[0]} and {my.hobbies[1]}
+          </li>
+        )
+      }
+    </ul>
+
+    <p>My skills are:</p>
+    <ul>
+      {skills.map((skill) => <li>{skill}</li>)}
+    </ul>
+
+    {happy && <p>I am happy to be learning Astro!</p>}
+    {finished && <p>I finished this tutorial!</p>}
+    My goal is to finish in {goal > 3 && ">"}{goal < 3 && "<"} 3 days.
+  </body>
 </html>
