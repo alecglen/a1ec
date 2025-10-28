@@ -14,7 +14,7 @@ const my = {
 const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "Writing Docs"];
 
 const happy = true;
-const finished = false;
+const finished = true;
 const goal = 2;
 
 const skillColor = "crimson";
@@ -47,13 +47,6 @@ const textCase = "uppercase";
   </ul>
 
   <p>My skills are:</p>
-  <style define:vars={{ skillColor, fontWeight, textCase }}>
-    .skill {
-      color: var(--skillColor);
-      font-weight: var(--fontWeight);
-      text-transform: var(--textCase);
-    }
-  </style>
   <ul>
     {skills.map((skill) => <li class="skill">{skill}</li>)}
   </ul>
