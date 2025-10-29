@@ -1,8 +1,7 @@
 ---
-const { post } = Astro.props;
-const { title } = post.frontmatter;
+const { id, data } = Astro.props.post;
 ---
 
 <li>
-  <a href={post.url}>{title}</a>
+  <a href={`/posts/${id}/`}>{data.title}</a>
 </li>

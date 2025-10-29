@@ -1,13 +1,13 @@
 ---
+import { getCollection } from "astro:content";
 import BasePageLayout from "../../layouts/BasePageLayout.astro";
 
 const pageTitle = "Tag Index";
 
-const postRecords = import.meta.glob("../posts/*.md", { eager: true });
-const posts = Object.values(postRecords);
+const posts = await getCollection("blog");
 
-const getPostTags = (post: any) => post.frontmatter.tags;
-const tags = [...new Set(posts.map(getPostTags).flat())];
+const getTags = (post: any) => post.data.tags;
+const tags = [...new Set(posts.map(getTags).flat())];
 ---
 
 <BasePageLayout pageTitle={pageTitle}>

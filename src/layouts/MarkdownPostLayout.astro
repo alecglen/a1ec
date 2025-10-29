@@ -3,15 +3,13 @@ import BasePageLayout from "./BasePageLayout.astro";
 
 const { title, author, pubDate, description, image, tags } =
   Astro.props.frontmatter;
-
-const pubDateStr = new Date(pubDate).toLocaleDateString();
 ---
 
 <BasePageLayout pageTitle={title}>
   <p><b>{description}</b></p>
   <img src={image.url} width="300" alt={image.alt} />
   <br />
-  <em>Written by {author} on {pubDateStr}</em>
+  <em>Written by {author} on {pubDate.toLocaleDateString()}</em>
 
   <style>
     a {

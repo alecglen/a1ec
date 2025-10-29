@@ -2,7 +2,6 @@
 title: My Second Blog Post
 author: Astro Learner
 pubDate: 2022-07-08
-layout: ../../layouts/MarkdownPostLayout.astro
 description: "After learning some Astro, I couldn't stop!"
 image:
     url: "https://docs.astro.build/assets/arc.webp"

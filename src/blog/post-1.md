@@ -2,7 +2,6 @@
 title: 'My First Blog Post'
 author: 'Astro Learner'
 pubDate: 2022-07-01
-layout: ../../layouts/MarkdownPostLayout.astro
 description: 'The first post of my new Astro blog.'
 image:
     url: 'https://docs.astro.build/assets/rose.webp'
