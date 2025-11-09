@@ -4,15 +4,17 @@
   "name": "Node.js & TypeScript",
   "image": "mcr.microsoft.com/devcontainers/typescript-node:22-bookworm",
   "features": {
-    "ghcr.io/NicoVIII/devcontainer-features/pnpm:1": {}
+    "ghcr.io/NicoVIII/devcontainer-features/pnpm:2.0.2": {}
   },
   "forwardPorts": [4321],
   "postCreateCommand": "npm install",
 	"customizations": {
 		"vscode": {
 			"extensions": [
+				"anthropic.claude-code",
 				"astro-build.astro-vscode",
 				"dbaeumer.vscode-eslint",
+				"ecmel.vscode-html-css",
 				"esbenp.prettier-vscode"
 			]
 		}

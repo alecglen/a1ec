@@ -1,10 +1,10 @@
 import { glob } from "astro/loaders";
 import { z, defineCollection } from "astro:content";
 
-// Define a glob loader to load the blog post collection
-const loader = glob({ pattern: '**/[^_]*.md', base: "./src/blog" });
+// Define a glob loader to load the project post collection
+const loader = glob({ pattern: '**/[^_]*.md', base: "./src/projects" });
 
-// Define a schema to specify the blog post frontmatter
+// Define a schema to specify the project post frontmatter
 const schema = z.object({
     title: z.string(),
     author: z.string(),
@@ -17,8 +17,8 @@ const schema = z.object({
     tags: z.array(z.string())
 });
 
-// Define the blog collection
-const blog = defineCollection({loader, schema});
+// Define the projects collection
+const projects = defineCollection({loader, schema});
 
 // Export a single `collections` object to register your collection(s)
-export const collections = { blog };
+export const collections = { projects };

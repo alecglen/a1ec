@@ -1,9 +1,25 @@
 ---
+import "../styles/global.css";
+import { Image } from "astro:assets";
 import BaseLayout from "../layouts/BasePageLayout.astro";
-
-const pageTitle = "Home";
+import helloThere from "../img/obi.gif";
 ---
 
-<BaseLayout pageTitle={pageTitle}>
-  <h2>My awesome blog subtitle</h2>
+<BaseLayout pageTitle="Home" titleHeader={false}>
+  <Image src={helloThere} alt="Hello there, General Kenobi" id="Obi" />
+  <h2>Welcome to my personal site! 👋</h2>
 </BaseLayout>
+
+<style>
+  #Obi {
+    width: 100%;
+    height: auto;
+    border: 5px solid #5e1da2;
+    border-radius: 15rem;
+  }
+  h2 {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+</style>

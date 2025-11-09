@@ -5,7 +5,8 @@
 <button id="themeToggle" aria-label="Toggle theme">
   <svg
     aria-hidden="true"
-    width="30px"
+    width="100%"
+    height="auto"
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 24 24"
   >
@@ -26,14 +27,30 @@
   #themeToggle {
     border: 0;
     background: none;
+    margin-left: 15vw;
   }
+  svg {
+    width: 35px;
+  }
+
+  @media screen and (max-width: 1050px) {
+    #themeToggle {
+      margin-left: 0;
+    }
+  }
+
+  @media screen and (min-width: 640px) {
+    svg {
+      width: 30px;
+    }
+  }
+
   .sun {
     fill: black;
   }
   .moon {
     fill: transparent;
   }
-
   :global(.dark) .sun {
     fill: transparent;
   }

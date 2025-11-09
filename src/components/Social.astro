@@ -4,17 +4,17 @@ const { platform, username } = Astro.props;
 const platformTitle = platform.charAt(0).toUpperCase() + platform.slice(1);
 
 let link = `https://www.${platform}.com`;
-if (platform == "linkedin") link += "in";
-link += username;
+if (platform == "linkedin") link += "/in";
+link += `/${username}`;
 ---
 
 <style>
   a {
     padding: 0.5rem 1rem;
     color: white;
-    background-color: #4c1d95;
+    /* background-color: #4c1d95; */
     text-decoration: none;
   }
 </style>
 
-<a href={link}>{platformTitle}</a>
+<a href={link} target="_blank" rel="noopener noreferrer">{platformTitle}</a>

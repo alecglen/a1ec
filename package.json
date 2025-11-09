@@ -4,13 +4,15 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "dev": "astro dev",
+    "dev": "astro dev --host",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "tunnel": "npx untun@latest tunnel http://localhost:3000"
   },
   "dependencies": {
     "@astrojs/rss": "^4.0.13",
-    "astro": "^5.15.1"
+    "astro": "^5.15.1",
+    "astro-tunnel": "^0.1.8"
   }
 }

@@ -1,7 +1,57 @@
 ---
-
+import "../styles/global.css";
 ---
 
-<button aria-expanded="false" aria-controls="main-menu" class="menu">
-  Menu
+<style>
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
+  .menu {
+    background: none;
+    padding: 0;
+  }
+  :global(.dark) .menu {
+    color: white;
+  }
+  svg {
+    width: 50px;
+  }
+</style>
+
+<button class="menu" aria-expanded="false" aria-controls="main-menu">
+  <span class="sr-only">Menu</span>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="100%"
+    height="auto"
+    viewBox="0 0 256 256"
+    aria-hidden="true"
+    stroke="currentcolor"
+    fill="currentcolor"
+    class="astro-patnjmll"
+    data-astro-cid-patnjmll=""
+    data-darkreader-inline-stroke=""
+    style="--darkreader-inline-stroke: currentcolor; --darkreader-inline-fill: currentcolor;"
+    data-darkreader-inline-fill=""
+  >
+    <g data-astro-cid-patnjmll=""
+      ><path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="16"
+        d="M40 128h176M40 64h176M40 192h176"></path></g
+    >
+  </svg>
 </button>
+
+<!-- <button aria-expanded="false" aria-controls="main-menu" class="menu">
+  Menu
+</button> -->
