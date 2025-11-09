@@ -1,10 +1,10 @@
 ---
 import { getCollection } from "astro:content";
 import BasePageLayout from "../../layouts/BasePageLayout.astro";
-import BlogPostLink from "../../components/BlogPostLink.astro";
+import PostLink from "../../components/PostLink.astro";
 
 export async function getStaticPaths() {
-  const posts = await getCollection("blog");
+  const posts = await getCollection("projects");
 
   const getTags = (post: any) => post.data.tags;
   const uniqueTags = [...new Set(posts.map(getTags).flat())];
@@ -27,6 +27,6 @@ const filteredPosts = posts.filter((post: any) =>
 <BasePageLayout pageTitle={tag}>
   <p>Posts tagged with {tag}</p>
   <ul>
-    {filteredPosts.map((post: any) => <BlogPostLink post={post} />)}
+    {filteredPosts.map((post: any) => <PostLink post={post} />)}
   </ul>
 </BasePageLayout>
