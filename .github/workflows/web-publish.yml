@@ -1,0 +1,32 @@
+name: Publish Web App
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    types: [opened, synchronize, reopened, closed]
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build_and_publish_job:
+    if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action != 'closed')
+    runs-on: ubuntu-latest
+    name: Build and Publish
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          submodules: true
+          lfs: false
+      - name: Build And Publish
+        id: builddeploy
+        uses: Azure/static-web-apps-deploy@v1
+        with:
+          action: "upload"
+          app_location: "/"
+          api_location: ""
+          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_KIND_GROUND_016DCF810 }}
+          output_location: "dist"
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
